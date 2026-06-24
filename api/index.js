@@ -27,8 +27,6 @@ app.post('/chat', async (req, res) => {
         res.status(200).json(response.data);
     } catch (error) {
         console.error('Lỗi Backend:', error.message);
-        
-        // Trả về lỗi chi tiết để Frontend biết tại sao "mù"
         res.status(502).json({ 
             error: "Neko không thể kết nối tới máy chủ xử lý.",
             details: error.message 
